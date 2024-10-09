@@ -1,0 +1,7 @@
+[mod]
+name="LibAttachments"
+id="lib-attachments"
+version="1.0.0"
+
+[autoload]
+LibAttachments="res://mods/LibAttachments/LibAttachments.gd"
