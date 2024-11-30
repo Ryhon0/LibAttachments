@@ -12,6 +12,9 @@ func loadCustomAttachments():
 	for a in weapon.attachments.get_children():
 		var filename = a.name
 		for ca in lib.attachmentList:
+			# What?
+			if type >= Type.keys().size():
+				continue
 			if AttachmentData.Category.keys()[ca.data.category] != Type.keys()[type]:
 				continue
 			if ca.siblingFile != filename:
@@ -22,4 +25,9 @@ func loadCustomAttachments():
 			modelInst.transform = a.transform
 			modelInst.translate(ca.offset)
 			modelInst.name = ca.data.file
+			modelInst.minPosition = a.minPosition
+			modelInst.maxPosition = a.maxPosition
+			modelInst.defaultPosition = a.defaultPosition
+			modelInst.railMovement = a.railMovement
+			modelInst.slideFollow = a.slideFollow
 			modelInst.visible = false
